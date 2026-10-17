@@ -16,7 +16,8 @@ const menuData = [
 {id:12,name:"Croissant",category:"Snack",price:18000,desc:"Pastry berlapis dengan tekstur renyah.",img:"https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=700&q=80"},
 {id:13,name:"French Fries",category:"Snack",price:20000,desc:"Kentang goreng hangat teman ngobrol.",img:"https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=700&q=80"},
 {id:14,name:"Donat",category:"Snack",price:12000,desc:"Donat lembut untuk teman ngopi.",img:"https://i.pinimg.com/1200x/1b/77/84/1b77843d964ba262bc60da1aecd79507.jpg"},
-{id:15,name:"Sandwich",category:"Snack",price:28000,desc:"Roti isi praktis untuk mengganjal lapar.",img:"https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=700&q=80"}
+{id:15,name:"Sandwich",category:"Snack",price:28000,desc:"Roti isi praktis untuk mengganjal lapar.",img:"https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=700&q=80"},
+    {id:16,name:"Nasi Goreng",category:"",price:28000,desc:"Roti isi praktis untuk mengganjal lapar.",img:"https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=700&q=80"}
 ];
 const cart = new Map();let currentCategory="All";const rupiah=n=>new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(n);
 function renderMenu(){const grid=document.getElementById('menuGrid');const shown=menuData.filter(x=>currentCategory==='All'||x.category===currentCategory);grid.innerHTML=shown.map(x=>`<article class="menu-card"><div class="food-img" style="background-image:url('${x.img}')" role="img" aria-label="${x.name}"></div><div class="menu-info"><h3>${x.name}</h3><p>${x.desc}</p><div class="menu-bottom"><span class="price">${rupiah(x.price)}</span><button class="add" onclick="addToCart(${x.id})" aria-label="Tambah ${x.name}" title="Tambah ke keranjang">+</button></div></div></article>`).join('');}
