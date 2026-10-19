@@ -20,5 +20,28 @@
 <footer class="footer"><div class="brand"><span class="bean">☕</span><span>KOPI SENJA</span></div><span>© <span id="year"></span> KOPI SENJA. Dibuat dengan ☕ dan cerita.</span><span>Hangat di setiap tegukan.</span></footer>
 </div></div>
 <button class="cart-fab" onclick="openCart()">🛍 Keranjang <span class="cart-count" id="cartCount">0</span></button>
-<div class="overlay" id="cartOverlay" onclick="outsideClose(event)"><aside class="drawer" role="dialog" aria-modal="true" aria-label="Keranjang pesanan"><div class="drawer-head"><h2>Pesanan kamu</h2><button class="close" onclick="closeCart()" aria-label="Tutup">×</button></div><div id="cartItems" class="cart-items"></div><div class="total"><span>Total</span><span id="cartTotal">Rp0</span></div><div class="field"><label for="customerName">Nama pelanggan</label><input id="customerName" placeholder="Nama kamu" autocomplete="name"></div><div class="field"><label for="orderType">Tipe pesanan</label><select id="orderType"><option value="Takeaway">Takeaway</option><option value="Dine-in">Dine-in</option></select></div><div class="field"><label for="orderNote">Catatan (opsional)</label><input id="orderNote" placeholder="Contoh: less sugar, es dipisah"></div><button class="btn primary send" onclick="sendOrder()">Kirim pesanan via WhatsApp ↗</button><p class="note">Nomor WhatsApp harus diatur oleh pemilik kedai sebelum pemesanan digunakan. Harga di website adalah harga contoh dan dapat diubah.</p></aside></div>
+<div class="overlay" id="cartOverlay" onclick="outsideClose(event)"><aside class="drawer" role="dialog" aria-modal="true" aria-label="Keranjang pesanan"><div class="drawer-head"><h2>Pesanan kamu</h2><button class="close" onclick="closeCart()" aria-label="Tutup">×</button></div><div id="cartItems" class="cart-items"></div><div class="total"><span>Total</span><span id="cartTotal">Rp0</span></div><div class="field"><label for="customerName">Nama pelanggan</label><input id="customerName" placeholder="Nama kamu" autocomplete="name"></div>
+<div class="field">
+  <label for="orderType">Tipe pesanan</label>
+  <select id="orderType">
+    <option value="Takeaway">Takeaway</option>
+    <option value="Dine-in">Dine-in</option>
+  </select>
+</div>
+  
+  
+<div class="field" id="tableNumberField" hidden>
+  <label for="tableNumber">Nomor meja</label>
+  <input
+    id="tableNumber"
+    type="number"
+    min="1"
+    max="100"
+    step="1"
+    placeholder="Masukkan nomor meja"
+  >
+  <span class="note">Isi nomor meja 1–100 untuk pesanan dine-in.</span>
+</div>
+
+  <div class="field"><label for="orderNote">Catatan (opsional)</label><input id="orderNote" placeholder="Contoh: less sugar, es dipisah"></div><button class="btn primary send" onclick="sendOrder()">Kirim pesanan via WhatsApp ↗</button><p class="note">Nomor WhatsApp harus diatur oleh pemilik kedai sebelum pemesanan digunakan. Harga di website adalah harga contoh dan dapat diubah.</p></aside></div>
 <script src="script.js" defer></script></body></html>
